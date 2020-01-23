@@ -1,0 +1,112 @@
+﻿@model IEnumerable<SkyTravelsSys.Models.OperationTbl>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.OperationDay)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.OperationDate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.REG)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FlightNumber)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.AirportFrom)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.AirportTo)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TakeOFF)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Landing)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PAX)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CaptainID)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FirstOfficerID)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Cabin)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Client)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.IsCanceled)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.OperationDay)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.OperationDate)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.REG)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.FlightNumber)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.AirportFrom)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.AirportTo)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TakeOFF)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Landing)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PAX)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CaptainID)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.FirstOfficerID)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Cabin)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Client)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.IsCanceled)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.ID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.ID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.ID })
+        </td>
+    </tr>
+}
+
+</table>

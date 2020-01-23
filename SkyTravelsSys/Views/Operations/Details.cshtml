@@ -1,0 +1,131 @@
+﻿@model SkyTravelsSys.Models.OperationTbl
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>OperationTbl</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.OperationDay)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.OperationDay)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.OperationDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.OperationDate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.REG)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.REG)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.FlightNumber)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FlightNumber)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.AirportFrom)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.AirportFrom)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.AirportTo)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.AirportTo)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TakeOFF)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TakeOFF)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Landing)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Landing)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PAX)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PAX)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CaptainID)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CaptainID)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.FirstOfficerID)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FirstOfficerID)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Cabin)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Cabin)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Client)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Client)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.IsCanceled)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.IsCanceled)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.ID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

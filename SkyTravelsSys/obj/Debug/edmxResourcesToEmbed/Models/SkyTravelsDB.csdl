@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="SkyTravelsDBModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="CrewTbl">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Name="Nationality" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="DateOfBirth" Type="DateTime" Precision="0" />
+    <Property Name="PassportNumber" Type="Int32" />
+    <Property Name="Role" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="OperationTbl">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="OperationDay" Type="Int32" />
+    <Property Name="OperationDate" Type="DateTime" Precision="0" />
+    <Property Name="REG" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="FlightNumber" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="AirportFrom" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="AirportTo" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="TakeOFF" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Landing" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="PAX" Type="Int32" />
+    <Property Name="CaptainID" Type="Int32" />
+    <Property Name="FirstOfficerID" Type="Int32" />
+    <Property Name="Cabin" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="Client" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="IsCanceled" Type="Boolean" />
+  </EntityType>
+  <EntityContainer Name="SkyTravelsDBEntities1" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="CrewTbls" EntityType="Self.CrewTbl" />
+    <EntitySet Name="OperationTbls" EntityType="Self.OperationTbl" />
+  </EntityContainer>
+</Schema>

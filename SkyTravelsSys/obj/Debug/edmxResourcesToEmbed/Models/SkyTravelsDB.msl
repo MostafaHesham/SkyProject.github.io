@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="SkyTravelsDBModelStoreContainer" CdmEntityContainer="SkyTravelsDBEntities1">
+    <EntitySetMapping Name="CrewTbls">
+      <EntityTypeMapping TypeName="SkyTravelsDBModel.CrewTbl">
+        <MappingFragment StoreEntitySet="CrewTbl">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Nationality" ColumnName="Nationality" />
+          <ScalarProperty Name="DateOfBirth" ColumnName="DateOfBirth" />
+          <ScalarProperty Name="PassportNumber" ColumnName="PassportNumber" />
+          <ScalarProperty Name="Role" ColumnName="Role" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="OperationTbls">
+      <EntityTypeMapping TypeName="SkyTravelsDBModel.OperationTbl">
+        <MappingFragment StoreEntitySet="OperationTbl">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="OperationDay" ColumnName="OperationDay" />
+          <ScalarProperty Name="OperationDate" ColumnName="OperationDate" />
+          <ScalarProperty Name="REG" ColumnName="REG" />
+          <ScalarProperty Name="FlightNumber" ColumnName="FlightNumber" />
+          <ScalarProperty Name="AirportFrom" ColumnName="AirportFrom" />
+          <ScalarProperty Name="AirportTo" ColumnName="AirportTo" />
+          <ScalarProperty Name="TakeOFF" ColumnName="TakeOFF" />
+          <ScalarProperty Name="Landing" ColumnName="Landing" />
+          <ScalarProperty Name="PAX" ColumnName="PAX" />
+          <ScalarProperty Name="CaptainID" ColumnName="CaptainID" />
+          <ScalarProperty Name="FirstOfficerID" ColumnName="FirstOfficerID" />
+          <ScalarProperty Name="Cabin" ColumnName="Cabin" />
+          <ScalarProperty Name="Client" ColumnName="Client" />
+          <ScalarProperty Name="IsCanceled" ColumnName="IsCanceled" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

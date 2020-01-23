@@ -1,0 +1,77 @@
+﻿@model IEnumerable<SkyTravelsSys.ViewModels.TaskViewModel>
+
+@{
+    ViewBag.Title = "GetAllTasks";
+}
+
+
+<!-- Breadcrumbs-->
+<ol class="breadcrumb">
+    <li class="breadcrumb-item">
+        <a href="employee.html">SkyTravel</a>
+    </li>
+    <li class="breadcrumb-item active">Schdule</li>
+</ol>
+
+<!-- DataTables Example -->
+<div class="card mb-3">
+    <div class="card-header">
+        <i class="fas fa-table"></i>
+        Schdules
+    </div>
+    <div class="card-body">
+        <div class="table-responsive">
+            <table class="table table-bordered" id="dataTable" cellspacing="0">
+                <thead>
+                    <tr>
+                        <th rowspan="2">Day</th>
+                        <th rowspan="2">Date</th>
+                        <th rowspan="2">FLT NO</th>
+                        <th rowspan="2">REG</th>
+                        <th colspan="2">Airport</th>
+                        <th colspan="2">UTC-ZOLO TIME</th>
+                        <th rowspan="2">PAX</th>
+                        <th colspan="2">CREW</th>
+                        <th rowspan="2">CABIN</th>
+                        <th rowspan="2">CLIENT</th>
+                    </tr>
+                    <tr>
+                        <th>From</th>
+                        <th>To</th>
+                        <th>Take Off</th>
+                        <th>Landing</th>
+                        <th>CAP</th>
+                        <th>FO</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model)
+                    {
+
+                        <tr>
+                            <td>@Html.DisplayFor(modelItem => item.DayName)</td>
+                            @{
+                                var dateTime = item.Calender.ToShortDateString();
+                            }
+                            <td>@Html.DisplayFor(modelItem => dateTime)</td>
+                            <td>@Html.DisplayFor(modelItem => item.Reg)</td>
+                            <td>@Html.DisplayFor(modelItem => item.FlightNumber)</td>
+                            <td>@Html.DisplayFor(modelItem => item.AirportFrom)</td>
+                            <td>@Html.DisplayFor(modelItem => item.AirportTo)</td>
+                            <td>@Html.DisplayFor(modelItem => item.TakeOff)</td>
+                            <td>@Html.DisplayFor(modelItem => item.Landing)</td>
+                            <td>@Html.DisplayFor(modelItem => item.Pax)</td>
+                            <td>@Html.DisplayFor(modelItem => item.CaptinName)</td>
+                            <td>@Html.DisplayFor(modelItem => item.firstOfficerName)</td>
+                            <td>@Html.DisplayFor(modelItem => item.CabindName)</td>
+                            <td>@Html.DisplayFor(modelItem => item.Client)</td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <div class="card-footer small text-muted">Updated at @DateTime.Now</div>
+</div>
+
+

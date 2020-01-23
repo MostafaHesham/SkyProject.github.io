@@ -1,0 +1,137 @@
+﻿@model SkyTravelsSys.ViewModels.TaskViewModel
+
+@{
+    ViewBag.Title = "GenerateTask";
+}
+<!-- Breadcrumbs-->
+<ol class="breadcrumb">
+    <li class="breadcrumb-item">
+        <a href="operation.html">SkyTravel</a>
+    </li>
+    <li class="breadcrumb-item active">New Task</li>
+</ol>
+
+<div class="card mb-3">
+    <div class="card-header">
+        <i class="fas fa-table"></i>
+        New Task
+    </div>
+    <div class="card-body">
+
+        @using (Html.BeginForm())
+        {
+            @Html.AntiForgeryToken()
+            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+            <div class="form-row">
+                <div class="form-group col-md-4">
+                    @Html.LabelFor(model => model.Days)
+                    @Html.DropDownListFor(x=>x.DayId, Model.Days.Select(item => new SelectListItem
+                                {
+                                    Value = item.Id.ToString(),
+                                    Text = item.Name.ToString(),
+                                    Selected = "select" == item.Id.ToString()
+                                           }),
+                                           new { @class = "form-control" }
+                                )
+                    @Html.ValidationMessageFor(model => model.Calender, "", new { @class = "text-danger" })
+                </div>
+                <div class="form-group col-md-4">
+                    @Html.LabelFor(model => model.Calender)
+                    @Html.EditorFor(model => model.Calender, new { htmlAttributes = new { @type = "Date", @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.Calender, "", new { @class = "text-danger" })
+                </div>
+                <div class="form-group col-md-4">
+                    @Html.LabelFor(model => model.Reg, htmlAttributes: new { @class = "control-label col-md-2" })
+                    @Html.EditorFor(model => model.Reg, new { htmlAttributes = new { @class = "form-control", placeholder = "SU-SME" } })
+                    @Html.ValidationMessageFor(model => model.Reg, "", new { @class = "text-danger" })
+                </div>
+            </div>
+            <div class="form-row">
+
+                <div class="form-group col-md-4">
+                    @Html.LabelFor(model => model.FlightNumber)
+                    @Html.EditorFor(model => model.FlightNumber, new { htmlAttributes = new { @class = "form-control", placeholder = "F1234" } })
+                    @Html.ValidationMessageFor(model => model.FlightNumber, "", new { @class = "text-danger" })
+                </div>
+                <div class="form-group col-md-4">
+                    @Html.LabelFor(model => model.AirportFrom)
+                    @Html.EditorFor(model => model.AirportFrom, new { htmlAttributes = new { @class = "form-control", placeholder = "BEY" } })
+                    @Html.ValidationMessageFor(model => model.AirportFrom, "", new { @class = "text-danger" })
+                </div>
+
+                <div class="form-group col-md-4">
+                    @Html.LabelFor(model => model.AirportTo)
+                    @Html.EditorFor(model => model.AirportTo, new { htmlAttributes = new { @class = "form-control", placeholder = "LCA" } })
+                    @Html.ValidationMessageFor(model => model.AirportTo, "", new { @class = "text-danger" })
+                </div>
+            </div>
+            <div class="form-row">
+
+
+                <div class="form-group col-md-4">
+                    @Html.LabelFor(model => model.TakeOff)
+                    @Html.EditorFor(model => model.TakeOff, new { htmlAttributes = new { @class = "form-control", placeholder = "04:30" } })
+                    @Html.ValidationMessageFor(model => model.TakeOff, "", new { @class = "text-danger" })
+                </div>
+
+                <div class="form-group col-md-4">
+                    @Html.LabelFor(model => model.Landing)
+                    @Html.EditorFor(model => model.Landing, new { htmlAttributes = new { @class = "form-control", placeholder = "06:00" } })
+                    @Html.ValidationMessageFor(model => model.Landing, "", new { @class = "text-danger" })
+                </div>
+
+                <div class="form-group col-md-4">
+                    @Html.LabelFor(model => model.Pax)
+                    @Html.EditorFor(model => model.Pax, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.Pax, "", new { @class = "text-danger" })
+                </div>
+            </div>
+            <div class="form-row">
+
+
+                <div class="form-group col-md-4">
+                    @Html.LabelFor(model => model.Captain)
+                    @Html.DropDownListFor(model => model.CaptinId, Model.Captain.Select(item => new SelectListItem
+                            {
+                                Value = item.Id.ToString(),
+                                Text = item.Name.ToString(),
+                                Selected = "select" == item.Id.ToString()
+                                       }),
+                                       new { @class = "form-control" }
+                            )
+                    @Html.ValidationMessageFor(model => model.Captain, "", new { @class = "text-danger" })
+                </div>
+                <div class="form-group col-md-4">
+                    @Html.LabelFor(model => model.FirstOfficer)
+                    @Html.DropDownListFor(model => model.firstOfficerId, Model.FirstOfficer.Select(item => new SelectListItem
+                                 {
+                                     Value = item.Id.ToString(),
+                                     Text = item.Name.ToString(),
+                                     Selected = "select" == item.Id.ToString()
+                                            }),
+                                            new { @class = "form-control" }
+                                 )
+                    @Html.ValidationMessageFor(model => model.FirstOfficer, "", new { @class = "text-danger" })
+                </div>
+                <div class="form-group col-md-4">
+                        @Html.LabelFor(model => model.CabindName)
+                        @Html.EditorFor(model => model.CabindName, new { htmlAttributes = new { @class = "form-control", placeholder = "Cabin" } })
+                        @Html.ValidationMessageFor(model => model.CabindName, "", new { @class = "text-danger" })
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    @Html.LabelFor(model => model.Client)
+                    @Html.EditorFor(model => model.Client, new { htmlAttributes = new { @class = "form-control", placeholder = "ExecutiveSky" } })
+                    @Html.ValidationMessageFor(model => model.Client, "", new { @class = "text-danger" })
+                </div>
+            </div>
+            <input type="submit" value="Create" class="btn btn-primary" />
+
+
+        }
+
+    </div>
+    <div class="card-footer small text-muted">Updated at @DateTime.Now</div>
+
+</div>

@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="SkyTravelsDBModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="CrewTbl">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="250" />
+    <Property Name="Nationality" Type="nvarchar" MaxLength="50" />
+    <Property Name="DateOfBirth" Type="date" />
+    <Property Name="PassportNumber" Type="int" />
+    <Property Name="Role" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="OperationTbl">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="OperationDay" Type="int" />
+    <Property Name="OperationDate" Type="date" />
+    <Property Name="REG" Type="nvarchar" MaxLength="50" />
+    <Property Name="FlightNumber" Type="nvarchar" MaxLength="50" />
+    <Property Name="AirportFrom" Type="nvarchar" MaxLength="200" />
+    <Property Name="AirportTo" Type="nvarchar" MaxLength="200" />
+    <Property Name="TakeOFF" Type="nvarchar" MaxLength="50" />
+    <Property Name="Landing" Type="nvarchar" MaxLength="50" />
+    <Property Name="PAX" Type="int" />
+    <Property Name="CaptainID" Type="int" />
+    <Property Name="FirstOfficerID" Type="int" />
+    <Property Name="Cabin" Type="nvarchar" MaxLength="200" />
+    <Property Name="Client" Type="nvarchar" MaxLength="200" />
+    <Property Name="IsCanceled" Type="bit" />
+  </EntityType>
+  <EntityContainer Name="SkyTravelsDBModelStoreContainer">
+    <EntitySet Name="CrewTbl" EntityType="Self.CrewTbl" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="OperationTbl" EntityType="Self.OperationTbl" Schema="dbo" store:Type="Tables" />
+  </EntityContainer>
+</Schema>
